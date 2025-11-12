@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Face Recognition App</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  #video-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+  }
+
+  video, canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 640px;
+    height: 480px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  #controls {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    width: 200px;
+    outline: none;
+  }
+
+  input[type="text"]:focus {
+    border-color: #0052cc;
+    box-shadow: 0 0 5px #0052cc;
+  }
+
+  button {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #003d99;
+  }
+
+  #message {
+    margin-top: 15px;
+    min-height: 20px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <h2>Face Recognition Web App</h2>
+
+  <div id="video-container">
+    <video id="video" autoplay muted playsinline></video>
+    <canvas id="overlay"></canvas>
+  </div>
+
+  <div id="controls">
+    <input type="text" id="nameInput" placeholder="Enter name to register" />
+    <button id="registerBtn">Register Face</button>
+    <button id="recognizeBtn">Start Recognition</button>
+    <button id="stopRecBtn" disabled>Stop Recognition</button>
+  </div>
+
+  <div id="message"></div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
